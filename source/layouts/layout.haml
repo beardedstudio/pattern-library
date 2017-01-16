@@ -1,0 +1,30 @@
+!!! 5
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+%html.no-js{ :lang => "en" }
+  <!--<![endif]-->
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %title
+      = current_page.data.title || "Site Name"
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "keywords"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    = stylesheet_link_tag 'main'
+    = javascript_include_tag 'vendor/modernizr.js'
+
+
+  %body{:class => (current_path == "index.html") ? 'home' : 'internal'}
+
+    = partial "partials/site-header"
+
+    %main.main-content#main-content
+      .container
+        = yield
+
+    = partial "partials/site-footer"
+
+    = javascript_include_tag 'all.js'

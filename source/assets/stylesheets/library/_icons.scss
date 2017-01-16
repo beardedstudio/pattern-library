@@ -1,0 +1,16 @@
+@mixin icon-base {
+  background-size: contain;
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  vertical-align: top;
+}
+
+%icon-base {
+  @include icon-base;
+}
+
+.icon-menu,
+.icon-search {
+  @extend %icon-base;
+}

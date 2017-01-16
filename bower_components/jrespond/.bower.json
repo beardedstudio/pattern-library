@@ -1,0 +1,14 @@
+{
+  "name": "jrespond",
+  "main": "jRespond.js",
+  "homepage": "https://github.com/tindl88/jrespond",
+  "_release": "aa0653cdb8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "aa0653cdb886892565913bd7dae48d1442d176a5"
+  },
+  "_source": "https://github.com/tindl88/jrespond.git",
+  "_target": "*",
+  "_originalSource": "jrespond"
+}

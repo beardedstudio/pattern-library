@@ -1,0 +1,18 @@
+%header.site-header
+  .container
+    = link_to 'Skip to Content', '#main-content', :class => 'screenreader-text'
+
+    %h1.site-name
+      = link_to 'Stubbleman', '/'
+
+    %section.mobile-navigation
+      %button.primary-trigger{:'aria-controls' => 'primary-navigation' }
+        %span.icon-menu
+        %span.trigger-text Menu
+
+      %button.utility-trigger{:'aria-controls' => 'utility-navigation' }
+        %span.icon-search
+        %span.trigger-text Utility
+
+    = partial 'partials/primary-navigation'
+    = partial 'partials/utility-navigation'

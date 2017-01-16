@@ -1,0 +1,113 @@
+// typographic mixins and extends
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@mixin copy-face {
+  font-family: georgia, "Times New Roman", times, serif;
+  font-weight: normal;
+}
+
+@mixin title-face {
+  font-family: arial, "helvetica neue", helvetica, sans-serif;
+  font-weight: bold;
+}
+
+@mixin reversed-text-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin no-text-smoothing {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+@mixin subtle-text {
+  font-size: 0.875em;
+  color: $text-color-subtle;
+}
+
+@mixin link {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: $link-color-hover;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+@mixin link-reverse {
+  color: $background-color-subtle;
+  &:hover, &:focus {
+    color: $background-color;
+    text-decoration: none;
+  }
+}
+
+@mixin heading-link {
+  color: $heading-color;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: darken($heading-color, 15%);
+    text-decoration: underline;
+  }
+}
+
+@mixin heading {
+  @include title-face;
+  margin-bottom: 0.35em;
+  line-height: 1.2;
+  color: $heading-color;
+  a {
+    @include heading-link;
+  }
+}
+
+@mixin heading-1 {
+  @include heading;
+  font-size: 2.5em;
+}
+
+@mixin heading-2 {
+  @include heading;
+  font-size: 1.8em;
+}
+
+@mixin heading-3 {
+  @include heading;
+  font-size: 1.4em;
+}
+
+@mixin heading-4 {
+  @include heading;
+  font-size: 1.2em;
+}
+
+@mixin heading-5 {
+  @include heading;
+  font-size: 1em;
+}
+
+@mixin heading-6 {
+  @include heading;
+  font-size: 0.875em;
+}
