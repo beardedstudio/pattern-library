@@ -1,15 +1,45 @@
-document.addEventListener("DOMContentLoaded", function() {
-  var menuTrigger = document.querySelectorAll('.mobile-trigger'),
-      primaryMenu = document.querySelectorAll('.primary-navigation');
+var menuTrigger = document.querySelectorAll('.mobile-trigger')[0],
+    primaryMenu = document.querySelectorAll('.primary-navigation')[0];
 
-  if(menuTrigger.length > 0){
+document.addEventListener("DOMContentLoaded", function() {
+
+  if(menuTrigger !== null){
     function swapClasses(event) {
-      menuTrigger[0].classList.contains('is-open') ? menuTrigger[0].setAttribute('aria-expanded', 'false') : menuTrigger[0].setAttribute('aria-expanded', 'true');
-      primaryMenu[0].classList.contains('is-open') ? primaryMenu[0].setAttribute('aria-hidden', 'true') : primaryMenu[0].setAttribute('aria-hidden', 'false');
-      menuTrigger[0].classList.toggle('is-open');
-      primaryMenu[0].classList.toggle('is-open');
+      menuTrigger.classList.contains('is-open') ? menuTrigger.setAttribute('aria-expanded', 'false') : menuTrigger.setAttribute('aria-expanded', 'true');
+      primaryMenu.classList.contains('is-open') ? primaryMenu.setAttribute('aria-hidden', 'true') : primaryMenu.setAttribute('aria-hidden', 'false');
+      menuTrigger.classList.toggle('is-open');
+      primaryMenu.classList.toggle('is-open');
     };
 
-    menuTrigger[0].addEventListener("click", swapClasses);
+    menuTrigger.addEventListener("click", swapClasses);
+  }
+});
+
+jRes.addFunc({
+  breakpoint: 'nav',
+  enter: function() {
+    menuTrigger.setAttribute('aria-expanded', 'false')
+    primaryMenu.setAttribute('aria-hidden', true);
+
+    if(menuTrigger.classList.contains('is-open')){
+      menuTrigger.classList.toggle('is-open');
+    }
+
+    if(primaryMenu.classList.contains('is-open')){
+      primaryMenu.classList.toggle('is-open');
+    }
+  },
+
+  exit: function() {
+    menuTrigger.setAttribute('aria-expanded', 'true')
+    primaryMenu.setAttribute('aria-hidden', false);
+
+    if(menuTrigger.classList.contains('is-open')){
+      menuTrigger.classList.toggle('is-open');
+    }
+
+    if(primaryMenu.classList.contains('is-open')){
+      primaryMenu.classList.toggle('is-open');
+    }
   }
 });

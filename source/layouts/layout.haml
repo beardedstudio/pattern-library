@@ -14,20 +14,13 @@
     %meta{:content => "", :name => "keywords"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = stylesheet_link_tag 'main'
+    = stylesheet_link_tag 'highlighting'
+
     = javascript_include_tag 'vendor/modernizr.js'
-    = javascript_include_tag 'vendor/fontloader.min.js'
+
     %script{:src => '/assets/grunticon/production/grunticon.loader.js'}
     :javascript
       grunticon(["/assets/grunticon/production/icons.data.svg.css", "/assets/grunticon/production/icons.data.png.css", "/assets/grunticon/production/icons.fallback.css"], grunticon.svgLoadedCallback );
-
-    :javascript
-      (function(d) {
-        var config = {
-          kitId: 'cnc1jjn',
-          scriptTimeout: 3000
-        },
-        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-      })(document);
 
   %body{:class => (current_path == "index.html") ? 'home' : 'internal'}
 
@@ -38,5 +31,4 @@
         = yield
 
     = partial "partials/site-footer"
-
     = javascript_include_tag 'all.js'
