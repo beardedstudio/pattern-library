@@ -56,7 +56,9 @@ set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 
 activate :directory_indexes
+activate :syntax
 activate :sprockets
+
 sprockets.append_path File.join root, "bower_components"
 
 # Build-specific configuration
