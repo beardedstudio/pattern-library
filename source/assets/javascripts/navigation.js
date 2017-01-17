@@ -13,3 +13,23 @@ document.addEventListener("DOMContentLoaded", function() {
     menuTrigger[0].addEventListener("click", swapClasses);
   }
 });
+
+jRes.addFunc({
+  breakpoint: 'nav',
+  enter: function() {
+    var menuTrigger = document.querySelectorAll('.mobile-trigger');
+    var primaryMenu = document.querySelectorAll('.primary-navigation');
+
+    if(menuTrigger.classList.contains('is-open')){
+      menuTrigger.setAttribute('aria-expanded', 'false')
+      menuTrigger.classList.toggle('is-open');
+    }
+
+    if(primaryMenu.classList.contains('is-open')){
+      primaryMenu.classList.toggle('is-open');
+    }
+  },
+  exit: function() {
+
+  }
+});
