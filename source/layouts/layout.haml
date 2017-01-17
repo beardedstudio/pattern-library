@@ -17,7 +17,7 @@
     = stylesheet_link_tag 'highlighting'
 
     = javascript_include_tag 'vendor/modernizr.js'
-    = javascript_include_tag 'vendor/fontloader.min.js'
+
     %script{:src => '/assets/grunticon/production/grunticon.loader.js'}
     :javascript
       grunticon(["/assets/grunticon/production/icons.data.svg.css", "/assets/grunticon/production/icons.data.png.css", "/assets/grunticon/production/icons.fallback.css"], grunticon.svgLoadedCallback );
@@ -40,5 +40,4 @@
         = yield
 
     = partial "partials/site-footer"
-
     = javascript_include_tag 'all.js'
