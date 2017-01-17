@@ -4,7 +4,6 @@
   "description": "",
   "author": "Bearded <info@bearded.com>",
   "scripts": {
-    "icons": "rimraf source/assets/grunticon/production/* && babel-node tasks/icons.js",
     "modernizr": "rimraf source/javascripts/vendor/modernizr.js && babel-node tasks/build-modernizr.js"
   },
   "devDependencies": {
@@ -13,6 +12,11 @@
     "bower": "^1.5.2",
     "fs-extra": "^0.26.5",
     "globby": "^4.0.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-grunticon": "^2.3.1",
+    "grunt-svgmin": "^4.0.0",
     "grunticon-lib": "^1.0.4",
     "modernizr": "^3.3.1",
     "nodemon": "^1.8.1",

@@ -19,13 +19,18 @@
 }
 
 @mixin copy-face {
-  font-family: georgia, "Times New Roman", times, serif;
-  font-weight: normal;
+  font-family: "usual", arial, "helvetica neue", helvetica, sans-serif;
+  font-weight: 300;
 }
 
 @mixin title-face {
-  font-family: arial, "helvetica neue", helvetica, sans-serif;
-  font-weight: bold;
+  font-family: Quadon-Regular, arial, "helvetica neue", helvetica, sans-serif;
+  font-weight: normal;
+}
+
+@mixin alternate-face {
+  font-family: "usual", trebuchet, arial, "helvetica neue", helvetica, sans-serif;
+  font-weight:  400;
 }
 
 @mixin reversed-text-smoothing {

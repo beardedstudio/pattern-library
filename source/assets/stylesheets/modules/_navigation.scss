@@ -1,5 +1,14 @@
+.navigation {
+  position: relative;
+
+
+}
+
 .mobile-navigation {
   @include pie-clearfix;
+  position: relative;
+  text-align: left;
+
   //Specifically using breakpoint nav here because it is contextually appropriate.
   //In almost all other cases, you should use breakpoint large.
   @include breakpoint($breakpoint-nav) {
@@ -7,57 +16,63 @@
   }
 }
 
-.primary-trigger, .utility-trigger {
-  border: 1px solid $border-color;
+.mobile-trigger {
+  @include copy-face;
   background-color: transparent;
   color: $link-color;
   font-size: 1.25em;
-  padding: 0.5em;;
+  padding: 0.5em 0;
   margin: 0;
-  width: 48%;
+  border: none;
 
   &:hover, &:focus {
     cursor: pointer;
   }
 }
 
-.utility-trigger {
-
-}
-
-.primary-trigger {
+.mobile-trigger {
   margin-right: 1%;
+  outline: none;
 }
 
 .site-header .container {
   position: relative;
 }
 
-.primary-navigation, .utility-navigation {
+.primary-navigation {
   display: none;
   clear: both;
   padding-top: 1em;
   padding-bottom: 0.5em;
+  font-size: 1em;
+
+  &.is-open {
+    display: block;
+  }
 
   @include breakpoint($breakpoint-nav) {
     display: block;
   }
 
   ul {
-    background-color: $background-color-subtle;
-    padding: 1em 0;
-
-    @include breakpoint($breakpoint-nav) {
-      background-color: inherit;
-      padding: 0;
+    a {
+      color: $text-color-subtle;
+      display: block;
+      padding: .7em 0;
     }
   }
 
   li {
-    text-align: center;
-    padding-top: 1em;
-    margin-top: 1em;
-    border-top: 1px solid $border-color;
+    text-align: left;
+    border-top: 1px solid #f5f5f5;
+
+    &.active {
+      font-weight: bold;
+
+      a {
+        color: $text-color;
+      }
+    }
 
     @include breakpoint($breakpoint-nav) {
       display: inline-block;
@@ -88,23 +103,6 @@
           color: $text-color;
         }
       }
-    }
-  }
-}
-
-// use for things like user login/logout, other top-level, but lesser important links in header.
-.utility-navigation {
-  @include breakpoint($breakpoint-nav) {
-    padding-top: 0;
-    position: absolute;
-    top: 2em;
-    right: 0;
-    font-size: 0.8em;
-  }
-
-  li {
-    @include breakpoint($breakpoint-nav) {
-      margin-left: 0.75em;
     }
   }
 }

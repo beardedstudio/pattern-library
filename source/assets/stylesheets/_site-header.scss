@@ -1,0 +1,59 @@
+// site-wide header styles
+.site-name {
+  @include screenreader-text;
+}
+
+.site-header {
+  @include clearfix;
+  padding: 2em 0 2em 0;
+
+  .main-logo {
+    @include breakpoint($breakpoint-xs) {
+      @include column(6);
+    }
+
+    @include breakpoint($breakpoint-l) {
+      @include column(3);
+    }
+    @include breakpoint($breakpoint-xl) {
+      @include column(2);
+    }
+
+    img {
+      height: 50px;
+
+      @include breakpoint($breakpoint-m) {
+        height: 70px;
+      }
+    }
+  }
+
+  .skip-link:focus {
+    display: block;
+    position: fixed;
+    top: 2em;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .content {
+    margin-top: 1em;
+    @include breakpoint($breakpoint-xs) {
+      @include column(9);
+      @include last;
+      margin-top: 1em;
+    }
+
+    @include breakpoint($breakpoint-l) {
+      @include column(9);
+      @include last;
+      margin-bottom: 4em;
+      margin-top:0.75em;
+    }
+    @include breakpoint($breakpoint-xl) {
+      @include column(10);
+      @include last;
+    }
+  }
+}

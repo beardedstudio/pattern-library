@@ -1,5 +1,42 @@
-%nav.primary-navigation#primary-navigation
-  %ul.navigation-item-group
-    %li.nav-item= link_to 'Top', '#'
-    %li.nav-item= link_to 'Level', '#'
-    %li.nav-item= link_to 'Navigation', '#'
+%section.navigation
+  %section.mobile-navigation
+    %button.mobile-trigger{:'aria-controls' => 'primary-navigation' }
+      %span.trigger-text Patterns
+
+  %nav.primary-navigation#primary-navigation
+    %ul.navigation-item-group
+      %li.navigation-item.active
+        %a{:href => "#"}
+          Typography
+      %li.navigation-item
+        %a{:href => "#"}
+          Grid
+      %li.navigation-item
+        %a{:href => "#"}
+          Icons
+      %li.navigation-item
+        %a{:href => "#"}
+          Buttons
+      %li.navigation-item
+        %a{:href => "#"}
+          Forms
+
+      %li.navigation-item
+        %a{:href => "#"}
+          Tables
+
+      %li.navigation-item
+        %a{:href => "#"}
+          CSS Conventions
+
+      %li.navigation-item
+        %a{:href => "#"}
+          Naming Conventions
+
+      %li.navigation-item
+        %a{:href => "#"}
+          HTML Guide
+
+      %li.navigation-item
+        %a{:href => "#"}
+          Helper Mixins

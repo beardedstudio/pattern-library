@@ -1,18 +1,8 @@
 %header.site-header
   .container
-    = link_to 'Skip to Content', '#main-content', :class => 'screenreader-text'
+    %a{:href => "#main-content", :id => "skip-nav", :class => "screenreader-text skip-link"} Skip to Content
 
-    %h1.site-name
-      = link_to 'Stubbleman', '/'
-
-    %section.mobile-navigation
-      %button.primary-trigger{:'aria-controls' => 'primary-navigation' }
-        %span.icon-menu
-        %span.trigger-text Menu
-
-      %button.utility-trigger{:'aria-controls' => 'utility-navigation' }
-        %span.icon-search
-        %span.trigger-text Utility
-
-    = partial 'partials/primary-navigation'
-    = partial 'partials/utility-navigation'
+    .main-logo
+      %h1.site-name Bearded
+      %a{:href => "/"}
+        %img{:alt => "Bearded Logo - Home", :src => "/assets/images/bearded-logo.svg"}

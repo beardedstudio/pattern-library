@@ -2,5 +2,46 @@
 title: Welcome to Stubbleman
 ---
 
-%h2.page-title
-  The Stubbleman is Watching
+.content
+  = partial 'partials/primary-navigation'
+
+.content
+  %h2.page-title Typography
+
+  %section.primary
+    %h3.section-title Headings
+    %p Headings briefly describe the information below them. They are hierarchical and can be nested, implying both relative importance and dependency. This means that an <code>h1</code> will always be more important on a page than an  <code>h2</code> in its section. It also means that if an <code>h2</code> is beneath an <code>h1</code> in the DOM, then it is implied that its content has to do with the <code>h1</code>'s content.
+    %p Any heading style can be applied to any other heading (or any other element) using the appropriate heading Sass mixin.
+    %h1 This is an example of an h1
+    %p The <code>h1</code> element is only used on the site for the site name.
+    %code.code-example
+      %pre
+        @include heading-1;
+    %h2
+      This is an example of an h2
+    %code.code-example
+      %pre
+        @include heading-2;
+
+    %h3
+      This is an example of an h3
+    %code.code-example
+      %pre
+        @include heading-3;
+
+    %h4
+      This is an example of an h4
+    %code.code-example
+      %pre
+        @include heading-4;
+    %h5
+      This is an example of an h5
+    %code.code-example
+      %pre
+        @include heading-5;
+
+    %h6
+      This is an example of an h6
+    %code.code-example
+      %pre
+        @include heading-6;

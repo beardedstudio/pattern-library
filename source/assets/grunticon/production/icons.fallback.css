@@ -1,4 +1,8 @@
+.icon-menu.min { background-image: url('png/menu.min.png'); background-repeat: no-repeat; }
+
 .icon-menu { background-image: url('png/menu.png'); background-repeat: no-repeat; }
+
+.icon-search.min { background-image: url('png/search.min.png'); background-repeat: no-repeat; }
 
 .icon-search { background-image: url('png/search.png'); background-repeat: no-repeat; }
 

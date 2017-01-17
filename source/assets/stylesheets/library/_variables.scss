@@ -1,16 +1,21 @@
-$text-color: #000;
-$heading-color: #000;
-$text-color-subtle: lighten($text-color, 30%);
+$text-color: #6B6B6B;
+$heading-color: #353535;
+$text-color-subtle: lighten($text-color, 20%);
 
-$link-color: blue;
+$link-color: #e97048; // Orange
 $link-color-hover: darken($link-color, 15%);
 
-$highlight-color: #333;
+$highlight-color: #f2d95d; // Yellow
 $highlight-color-hover: darken($highlight-color, 15%);
 
-$border-color: #ccc;
+$accent-color: #99b5bc;
+$accent-color-subtle: #e6ebec;
+$accent-color-subtle-dark: #bdc2c4;
 
 $background-color: #fff;
-$background-color-subtle: #eee;
+$background-color-subtle: #f1f1f2;
+
+$border-color: darken($accent-color-subtle, 5%);
+$border-color-subtle: darken($background-color-subtle, 10%);
 
 $footer-color: #fff;
