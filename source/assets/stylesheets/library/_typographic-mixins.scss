@@ -19,17 +19,17 @@
 }
 
 @mixin copy-face {
-  font-family: "usual", arial, "helvetica neue", helvetica, sans-serif;
-  font-weight: 300;
+  font-family: "Roboto", helvetica, sans-serif;
+  font-weight: 400;
 }
 
 @mixin title-face {
-  font-family: Quadon-Regular, arial, "helvetica neue", helvetica, sans-serif;
-  font-weight: normal;
+  font-family: "Roboto", helvetica, sans-serif;
+  font-weight: 300;
 }
 
 @mixin alternate-face {
-  font-family: "usual", trebuchet, arial, "helvetica neue", helvetica, sans-serif;
+  font-family: "Roboto", helvetica, sans-serif;
   font-weight:  400;
 }
 
