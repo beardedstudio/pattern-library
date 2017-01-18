@@ -14,25 +14,11 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 // $column_width: 2.5%;
 // $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 
-@mixin container($max-width: 81.25em) {
-  width: 95%;
+@mixin container($max-width: 65em) {
+  width: $grid_width;
   margin: auto;
   max-width: $max-width;
   *zoom: 1;
-
-  @include breakpoint($breakpoint-s) {
-    width: 85%;
-  }
-
-  @include breakpoint($breakpoint-l) {
-    width: 95%;
-  }
-
-  @if $legacy-support-for-ie8 {
-    // give IE8 a fixed-width!
-    max-width: 75em;
-    width: 75em;
-  }
 }
 
 @function column_width($num) {
@@ -40,6 +26,7 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 }
 
 @mixin column($num) {
+  box-sizing: border-box;
   display: inline;
   float: left;
   width: column_width($num);
@@ -58,7 +45,6 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
   margin-left: column_width($num) + ($gutter_width);
 }
 
-///append assumes it is the last columns applied (if you need spacing in the middle, use prepend).
 @mixin append($num) {
   margin-right: column_width($num);
 }
@@ -68,105 +54,91 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 }
 
 @mixin last-col2 {
-  &:nth-of-type(1n) {
+  &:nth-of-type(n) {
     margin-right: $gutter-width;
-    float: left;
-    clear: none;
-
     .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
     }
+    float: left;
+    clear: none;
   }
-
   &:nth-of-type(2n+2) {
     @include last;
     float: right;
   }
-
   &:nth-of-type(2n+3) {
     clear: both;
   }
 }
 
 @mixin last-col3 {
-  &:nth-of-type(1n) {
+  &:nth-of-type(n) {
     margin-right: $gutter-width;
-    float: left;
-    clear: none;
     .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
     }
+    float: left;
+    clear: none;
   }
-
   &:nth-of-type(3n+3) {
     @include last;
     float: right;
   }
-
   &:nth-of-type(3n+4) {
     clear: both;
   }
 }
 
 @mixin last-col4 {
-  &:nth-of-type(1n) {
+  &:nth-of-type(n) {
     margin-right: $gutter-width;
-    float: left;
-    clear: none;
-
     .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
     }
+    float: left;
+    clear: none;
   }
-
   &:nth-of-type(4n+4) {
     @include last;
     float: right;
   }
-
   &:nth-of-type(4n+5) {
     clear: both;
   }
 }
 
-@mixin last-col5 {
-  &:nth-of-type(1n) {
-    margin-right: $gutter-width;
-    float: left;
-    clear: none;
-
-    .lt-ie8 & {
-      margin-right: $gutter_width - 0.25%;
-    }
-  }
-
-  &:nth-of-type(5n+5) {
-    @include last;
-    float: right;
-  }
-
-  &:nth-of-type(5n+6) {
-    clear: both;
-  }
-}
-
 @mixin last-col6 {
-  &:nth-of-type(1n) {
+  &:nth-of-type(n) {
     margin-right: $gutter-width;
-    float: left;
-    clear: none;
-
     .lt-ie8 & {
       margin-right: $gutter_width - 0.25%;
     }
+    float: left;
+    clear: none;
   }
-
   &:nth-of-type(6n+6) {
     @include last;
     float: right;
   }
-
   &:nth-of-type(6n+7) {
+    clear: both;
+  }
+}
+
+@mixin last-col8 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    .lt-ie8 & {
+      margin-right: $gutter_width - 0.25%;
+    }
+    float: left;
+    clear: none;
+  }
+  &:nth-of-type(8n+8) {
+    @include last;
+    float: right;
+  }
+  &:nth-of-type(8n+9) {
     clear: both;
   }
 }
@@ -174,38 +146,4 @@ $grid_width: ((($column_width+($gutter_width))*$columns)-$gutter_width);
 @mixin mobile-grid {
   padding-left: 2.5%;
   padding-right: 2.5%;
-}
-
-@mixin grid-inset {
-  max-width: 50em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.grid-inset {
-  @include grid-inset;
-}
-
-/////Below I've made a quick way to make a perfect column grid
-//using the mixin column-grid.
-//You can only use this with layouts of 2, 3, 4, or 6 columns.
-
-@mixin last-column($num) {
-  @if $num == 2 {
-    @include last-col6;
-  }
-  @else if $num == 3 {
-    @include last-col4;
-  }
-  @else if $num == 4 {
-    @include last-col3;
-  }
-  @else if $num == 6 {
-    @include last-col2;
-  }
-}
-
-@mixin column-grid($num) {
-  @include column($num);
-  @include last-column($num);
 }
