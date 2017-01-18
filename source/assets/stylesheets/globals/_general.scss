@@ -168,3 +168,64 @@ img {
 .not-visually-hidden {
   @include not-visually-hidden;
 }
+
+.grid-examples {
+  .column {
+    background: $border-color;
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 1em;
+  }
+
+  .column-12 {
+    @include column(12);
+    @include last;
+  }
+
+  .column-6 {
+    @include column(6);
+    @include last-col2;
+  }
+
+  .column-4 {
+    @include column(4);
+    @include last-col3;
+  }
+
+  .column-3 {
+    @include column(3);
+    @include last-col4;
+  }
+
+  .column-2 {
+    @include column(2);
+    @include last-col6;
+  }
+
+  .column-9 {
+    @include column(9);
+  }
+
+  .column-5 {
+    @include column(5);
+  }
+
+  .column-8 {
+    @include column(8);
+  }
+
+  .column-7-last {
+    @include column(7);
+    @include last;
+  }
+
+  .column-3-last {
+    @include column(3);
+    @include last;
+  }
+
+  .column-4-last {
+    @include column(4);
+    @include last;
+  }
+}
