@@ -10,7 +10,8 @@
   @include icon-base;
 }
 
-.icon-menu,
-.icon-search {
+.icon-menu {
   @extend %icon-base;
+  height: 24px;
+  width: 24px;
 }
