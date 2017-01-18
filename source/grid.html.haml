@@ -1,0 +1,129 @@
+---
+title: Grid
+---
+
+.content
+  %h2.page-title= current_page.data.title
+
+  %section.content-section
+    %p.intro This site uses a 12-column fluid grid system. A 12-column system means that in addition to all sorts of asymmetrical layouts, we can easily attain both equal-width 3- and 4-column layouts.
+    %p The values used for gutter and column widths are calculated never to be more granular than an eighth of a percent, to avoid rounding issues.
+
+    %h3 Infinitely Nest-able
+    %p You can nest grids to your heart's content. You can, for instance, put a 6-column layout inside a 4-column layout. To do, forgo the split-the-gutters approach, and go with right margin gutters instead. That means we need to know what the last column is so we can remove the gutter on it. There are some handy mixins to help with this (more details below).
+
+    %h3 Sass-y
+    %p All the usable parts of the grid are mixins, of which there are two categories: column settings and last settings. Column settings apply column-based widths. Last settings calculate a pattern for which columns get the last mixin (and thus no right margin).
+
+    %h3 Column Settings
+    %p When determining what to use, remember that the width of an area is calculated in the number of columns (out of a possible 12) that make up that width. So an area that you want to be 50% of the possible width it could be (ie. 6 columns wide) should get <code>@include column(6)</code>.
+
+    %h3 Last Settings
+    %p On the other hand, last settings are trying to determine which column will get the last class (and thus no right margin). If you want to do a two-column layout, you'd use <code>@include last-col2</code>.
+
+    %h3 Example
+    %p So if you want a 4-column grid, you'll want to combine <code>@include column(3)</code> (3 x 4 = 12) with <code>@include last-col4</code>. Cool? Cool.
+
+  %section.content-section
+    %h3 Visual Examples
+    %p Below are some examples of common grid layouts in use, along with the CSS to implement them.
+
+    .grid-examples
+      .content-section
+        .column-wrapper
+          .column.column-12 12 Columns
+        :code
+          # lang: scss
+          .column {
+            @include column(12);
+            @include last;
+          }
+      .content-section
+        .column-wrapper
+          .column.column-6 6 Columns
+          .column.column-6 6 Columns
+        :code
+          # lang: scss
+          .column {
+            @include column(6);
+            @include last-col2;
+          }
+      .content-section
+        .column-wrapper
+          .column.column-4 4 Columns
+          .column.column-4 4 Columns
+          .column.column-4 4 Columns
+        :code
+          # lang: scss
+          .column {
+            @include column(4);
+            @include last-col3;
+          }
+      .content-section
+        .column-wrapper
+          .column.column-3 3 Columns
+          .column.column-3 3 Columns
+          .column.column-3 3 Columns
+          .column.column-3 3 Columns
+        :code
+          # lang: scss
+          .column {
+            @include column(3);
+            @include last-col4;
+          }
+      .content-section
+        .column-wrapper
+          .column.column-2 2 Cols
+          .column.column-2 2 Cols
+          .column.column-2 2 Cols
+          .column.column-2 2 Cols
+          .column.column-2 2 Cols
+          .column.column-2 2 Cols
+        :code
+          # lang: scss
+          .column {
+            @include column(2);
+            @include last-col6;
+          }
+      .content-section
+        .column-wrapper
+          .column.column-9 9 Columns
+          .column.column-3-last 3 Cols
+        :code
+          # lang: scss
+          .column-1 {
+            @include column(9);
+          }
+
+          .column-2 {
+            @include column(3);
+            @include last;
+          }
+        .content-section
+        .column-wrapper
+          .column.column-5 5 Columns
+          .column.column-7-last 7 Columns
+        :code
+          # lang: scss
+          .column-1 {
+            @include column(5);
+          }
+
+          .column-2 {
+            @include column(7);
+            @include last;
+          }
+      .content-section
+        .column-wrapper
+          .column.column-8 8 Columns
+          .column.column-4-last 4 Columns
+        :code
+          # lang: scss
+          .column-1 {
+            @include column(8);
+          }
+
+          .column-2 {
+            @include column(4);
+            @include last;
+          }
