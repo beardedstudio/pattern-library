@@ -29,6 +29,13 @@ html {
   background-color: $background-color;
   padding-top: 1em;
 
+  @include breakpoint($breakpoint-l) {
+    @include column(7);
+    @include append(1);
+    @include last;
+    padding-top: 4em;
+  }
+
   .constrained {
     max-width: 40em;
     margin: 0 auto 0 auto;

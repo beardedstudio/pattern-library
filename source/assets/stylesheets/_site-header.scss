@@ -4,8 +4,13 @@
 }
 
 .site-header {
-  @include clearfix;
   padding: 2em 0 2em 0;
+
+  @include breakpoint($breakpoint-l) {
+    @include column(3);
+    @include prepend(1);
+    padding-top: 4em;
+  }
 
   .main-logo {
     @include breakpoint($breakpoint-xs) {
@@ -13,10 +18,7 @@
     }
 
     @include breakpoint($breakpoint-l) {
-      @include column(3);
-    }
-    @include breakpoint($breakpoint-xl) {
-      @include column(2);
+      @include column(12);
     }
 
     img {
