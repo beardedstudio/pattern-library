@@ -1,8 +1,9 @@
 %header.site-header
-  .container
-    %a{:href => "#main-content", :id => "skip-nav", :class => "screenreader-text skip-link"} Skip to Content
+  %a{:href => "#main-content", :id => "skip-nav", :class => "screenreader-text skip-link"} Skip to Content
 
-    .main-logo
-      %h1.site-name Bearded
-      %a{:href => "/"}
-        %img{:alt => "Bearded Logo - Home", :src => "/assets/images/bearded-logo.svg"}
+  .main-logo
+    %h1.site-name Bearded
+    %a{:href => "/"}
+      %img{:alt => "Bearded Logo - Home", :src => "/assets/images/bearded-logo.min.svg"}
+
+  = partial 'partials/primary-navigation'
