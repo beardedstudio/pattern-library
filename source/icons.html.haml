@@ -1,0 +1,14 @@
+---
+title: icons
+---
+
+.content
+  %h2.page-title Iconography
+
+  %section.content-section
+    %p.intro For all icons we are using SVG files with PNG fallbacks. Because SVGs are vector based, they can be scaled and remain clear and crisp on any screen independent of resolution.
+    %p For this project, we're using Grunticon: a Grunt task that manages the icons and the PNG fallbacks. You should be able to add new SVGs to the app/assets/grunticon directory, and the task will run to generate the associated assets.
+    %p To use any of the icons listed below, simply create a span tag with the following syntax:
+    :code
+      # lang: html
+      <span class="icon-{icon-name}"></span>
