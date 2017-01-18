@@ -51,14 +51,38 @@
   }
 
   @include breakpoint($breakpoint-nav) {
+    padding-top: 3.5em;
     display: block;
   }
 
-  ul {
+  li {
     a {
       color: $text-color-subtle;
       display: block;
       padding: .7em 0;
+      position: relative;
+      transition: all .2s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 30px;
+        background: transparent;
+        left: -1em;
+        top: 50%;
+        margin-top: -15px;
+        transition: all .2s;
+      }
+
+      &:hover {
+        color: $text-color;
+        text-decoration: none;
+
+        &::before {
+          background: $border-color;
+        }
+      }
     }
   }
 
@@ -66,17 +90,20 @@
     text-align: left;
     border-top: 1px solid #f5f5f5;
 
-    &.active {
-      font-weight: bold;
+    &.active a {
+      color: $link-color;
+      font-weight: 700;
+      position: relative;
 
-      a {
-        color: $text-color;
+      @include breakpoint($breakpoint-nav) {
+        &::before {
+          background: $link-color;
+        }
       }
+
     }
 
     @include breakpoint($breakpoint-nav) {
-      display: inline-block;
-      @include divider-none;
       text-align: left;
     }
 

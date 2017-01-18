@@ -41,11 +41,11 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def nav_active(path)
+    current_page.path == path ? {:class => "active"} : {}
+  end
+end
 
 require 'breakpoint'
 

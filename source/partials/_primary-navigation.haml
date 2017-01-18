@@ -1,42 +1,37 @@
 %section.navigation
   %section.mobile-navigation
     %button.mobile-trigger{:'aria-controls' => 'primary-navigation' }
-      %span.trigger-text Patterns
+      %span.icon-menu
 
   %nav.primary-navigation#primary-navigation
     %ul.navigation-item-group
-      %li.navigation-item.active
-        %a{:href => "#"}
+      %li{ nav_active('index.html') }
+        %a{:href => "/"}
           Typography
-      %li.navigation-item
-        %a{:href => "#"}
+      %li{ nav_active('grid.html') }
+        %a{:href => "/grid"}
           Grid
-      %li.navigation-item
-        %a{:href => "#"}
+      %li{ nav_active('icons.html') }
+        %a{:href => "/icons"}
           Icons
-      %li.navigation-item
-        %a{:href => "#"}
+      %li{ nav_active('buttons.html') }
+        %a{:href => "/buttons"}
           Buttons
-      %li.navigation-item
-        %a{:href => "#"}
+      %li{ nav_active('forms.html') }
+        %a{:href => "/forms"}
           Forms
-
-      %li.navigation-item
-        %a{:href => "#"}
+      %li{ nav_active('tables.html') }
+        %a{:href => "/tables"}
           Tables
-
-      %li.navigation-item
-        %a{:href => "#"}
+      %li{ nav_active('css-conventions.html') }
+        %a{:href => "/css-conventions"}
           CSS Conventions
-
-      %li.navigation-item
-        %a{:href => "#"}
+      %%li{ nav_active('naming-conventions.html') }
+        %a{:href => "/naming-conventions"}
           Naming Conventions
-
-      %li.navigation-item
-        %a{:href => "#"}
+      %li{ nav_active('html-guide.html') }
+        %a{:href => "/html-guide"}
           HTML Guide
-
-      %li.navigation-item
-        %a{:href => "#"}
+      %li{ nav_active('helper-mixins.html') }
+        %a{:href => "/helper-mixins"}
           Helper Mixins
