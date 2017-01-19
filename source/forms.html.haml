@@ -1,0 +1,248 @@
+---
+title: Forms
+---
+
+.content
+  %h2.page-title Forms
+
+  %section.content-section
+    %p.intro Most form elements are pretty staightforward. One convention worth noting is that we generally wrap all input and label pairs in a div.input for ease of styling and layout.
+    %p For accessibility reasons, it's important to properly associate labels and their inputs. The best way to do that is the HTML5 way: wrap inputs with their associated label element.
+    %p But older screenreaders may balk at this approach. Because of this, we employ the redundant strategy of matching the label's <code>for</code> attribute with the input's <code>id</code>.
+
+    %h3 Labeled Input
+    .input
+      %label{for: 'gender'}
+        %span.label-text Gender
+        %input#gender{type: 'text', placeholder: 'e.g. Non-binary'}
+    :code
+      # lang: haml
+      .input
+        %label{for: 'gender'}
+          %span.label-text Gender
+          %input#gender{type: 'text', placeholder: 'e.g. Non-binary'}
+    %h3 Selects
+    .input
+      %label{for: 'state'}
+        %select#state
+          %option Select your state
+          - data.states.each do |s|
+            %option{value: s.abbreviation}= s.name
+    :code
+      # lang: haml
+      .input
+        %label{for: 'state'}
+          %select#state
+            %option Select your state
+            - data.states.each do |s|
+              %option{value: s.abbreviation}= s.name
+    %h3 Textarea
+    .input
+      %label{for: 'message'}
+        %span.label-text Talk to me!
+        %textarea{id: '#message', placeholder: 'How was your day?'}
+    :code
+      # lang: haml
+      .input
+        %label{for: 'message'}
+          %span.label-text Message
+          %textarea{id: '#message', placeholder: 'How was your day?'}
+    %h3 Labeled Checkbox
+    .checkbox-group
+      .input
+        %label{for: 'labeled-checkbox-1'}
+          %input#labeled-checkbox-1{type: 'checkbox'}
+          %span.label-text Labeled Checkbox
+      .input
+        %label{for: 'labeled-checkbox-2'}
+          %input#labeled-checkbox-2{type: 'checkbox'}
+          %span.label-text Labeled Checkbox
+    :code
+      # lang: haml
+      .input
+        %label{for: 'labeled-checkbox'}
+          %input#labeled-checkbox{type: 'checkbox'}
+          %span.label-text Labeled Checkbox
+    %h3 Radio Buttons
+    .radio-group
+      .input
+        %label{for: 'radio-input-1'}
+          %input#radio-input-1{type:'radio', name: 'test'}
+          %span.label-text Radio One
+      .input
+        %label{for: 'radio-input-2'}
+          %input#radio-input-2{type:'radio', name: 'test'}
+          %span.label-text Radio Two
+    :code
+      # lang: haml
+      .radio-group
+        .input
+          %label{for: 'radio-input-1'}
+            %input#radio-input-1{type:'radio', name: 'test'}
+            %span.label-text Radio One
+        .input
+          %label{for: 'radio-input-2'}
+            %input#radio-input-2{type:'radio', name: 'test'}
+            %span.label-text Radio Two
+  %section.content-section
+    %h3 Presentational Form Field Wrappers
+    %p We're all big fans of semantic markup, but sometimes in large systems, it's helpful to control layout with a presentational div or two. (The philosophy for this is explained in more detail in the naming convention technical guide.)
+    %p To achieve 2- and 3-column layouts with sets of inputs and their labels, we just need to employ some specially-named divs.
+
+    %h4 Two Column Inputs
+    %p Use the <code>.two-up</code> or <code>.two-up-wider</code> classes on a wrapper div around some labeled inputs. The <code>.two-up</code> class will make the pair of contained items lay out as two equal columns at all viewport widths. The <code>.two-up-wider</code> class will make the pair lay out as a single column at smaller viewport widths, and two columns at wider viewport widths.
+
+    %h4 Two-up
+    .two-up
+      .input
+        %label{for: 'first-name'}
+          %span.label-text First Name
+          %input#first-name{type: 'text'}
+
+      .input
+        %label{for: 'last-name'}
+          %span.label-text Last Name
+          %input#last-name{type: 'text'}
+    :code
+      # lang: haml
+      .two-up
+        .input
+          %label{for: 'first-name'}
+            %span.label-text First Name
+            %input#first-name{type: 'text'}
+        .input
+          %label{for: 'last-name'}
+            %span.label-text Last Name
+            %input#last-name{type: 'text'}
+    %h4 Two-up-wider
+    .two-up-wider
+      .input
+        %label{for: 'first-name'}
+          %span.label-text First Name
+          %input#first-name{type: 'text'}
+
+      .input
+        %label{for: 'last-name'}
+          %span.label-text Last Name
+          %input#last-name{type: 'text'}
+    :code
+      # lang: haml
+      .two-up-wider
+        .input
+          %label{for: 'first-name'}
+            %span.label-text First Name
+            %input#first-name{type: 'text'}
+        .input
+          %label{for: 'last-name'}
+            %span.label-text Last Name
+            %input#last-name{type: 'text'}
+    %h4 Three-column inputs
+    %p Use the <code>.three-up</code> class on a wrapper <code>div</code> around some labeled inputs. Because three columns are rarely feasible at the smallest viewport sizes, this effect only happens at larger viewport sizes.
+
+    %h4 Three-up
+    .three-up
+      .input
+        %label{for: 'first-name'}
+          %span.label-text First Name
+          %input#first-name{type: 'text'}
+
+      .input
+        %label{for: 'middle-name'}
+          %span.label-text Middle Name
+          %input#middle-name{type: 'text'}
+
+      .input
+        %label{for: 'last-name'}
+          %span.label-text Last Name
+          %input#last-name{type: 'text'}
+    :code
+      # lang: haml
+      .three-up
+        .input
+          %label{for: 'first-name'}
+            %span.label-text First Name
+            %input#first-name{type: 'text'}
+
+        .input
+          %label{for: 'middle-name'}
+            %span.label-text Middle Name
+            %input#middle-name{type: 'text'}
+
+        .input
+          %label{for: 'last-name'}
+            %span.label-text Last Name
+            %input#last-name{type: 'text'}
+    %h4 Three-up-wider
+    .three-up-wider
+      .input
+        %label{for: 'first-name'}
+          %span.label-text First Name
+          %input#first-name{type: 'text'}
+
+      .input
+        %label{for: 'middle-name'}
+          %span.label-text Middle Name
+          %input#middle-name{type: 'text'}
+
+      .input
+        %label{for: 'last-name'}
+          %span.label-text Last Name
+          %input#last-name{type: 'text'}
+    :code
+      # lang: haml
+      .three-up-wider
+        .input
+          %label{for: 'first-name'}
+            %span.label-text First Name
+            %input#first-name{type: 'text'}
+
+        .input
+          %label{for: 'middle-name'}
+            %span.label-text Middle Name
+            %input#middle-name{type: 'text'}
+
+        .input
+          %label{for: 'last-name'}
+            %span.label-text Last Name
+            %input#last-name{type: 'text'}
+    %ZIP-City-State
+    %p Addresses use a custom version of the <code>.three-up</code> styles using unequal column widths appropriate to ZIP, city, and state. The class used for this is <code>.zip-city-state</code>.
+
+    .three-up.zip-city-state
+      .input
+        %label{for: 'zip'}
+          %span.label-text ZIP
+          %input#zip{type: 'text', name: 'zip-code'}
+
+      .input
+        %label{for: 'city'}
+          %span.label-text City
+          %input#city{type: 'text', name: 'city'}
+
+      .input.select
+        %label{for: 'state'}
+          %span.label-text State
+          %select#state{name: 'state'}
+            %option Select One
+            - data.states.each do |s|
+              %option{value: s.abbreviation}= s.name
+    :code
+      # lang: haml
+      .three-up.zip-city-state
+        .input
+          %label{for: 'zip'}
+            %span.label-text ZIP
+            %input#zip{type: 'text', name: 'zip-code'}
+
+        .input
+          %label{for: 'city'}
+            %span.label-text City
+            %input#city{type: 'text', name: 'city'}
+
+        .input.select
+          %label{for: 'state'}
+            %span.label-text State
+            %select#state{name: 'state'}
+              %option Select One
+              - data.states.each do |s|
+                %option{value: s.abbreviation}= s.name
