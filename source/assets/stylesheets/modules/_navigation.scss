@@ -1,13 +1,11 @@
 .navigation {
   position: relative;
-
-
 }
 
 .mobile-navigation {
   @include pie-clearfix;
   position: relative;
-  text-align: left;
+  text-align: right;
 
   //Specifically using breakpoint nav here because it is contextually appropriate.
   //In almost all other cases, you should use breakpoint large.
@@ -104,6 +102,7 @@
     }
 
     @include breakpoint($breakpoint-nav) {
+      display: block;
       text-align: left;
     }
 
@@ -119,15 +118,13 @@
   @include breakpoint($breakpoint-nav) {
     ul {
       li {
-        margin-right: 1em;
-        padding-bottom: 0.5em;
 
         &.last {
           margin-right: 0;
         }
 
         a {
-          color: $text-color;
+          color: $text-color-subtle;
         }
       }
     }
