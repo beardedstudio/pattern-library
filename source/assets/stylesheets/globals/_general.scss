@@ -49,13 +49,18 @@ html {
 body {
   @include copy-face;
   color: $text-color;
-  line-height: 1.4;
+  line-height: 1.7;
+
+  @include breakpoint($breakpoint-l) {
+    max-width: 70em;
+    margin: 0 auto;
+  }
 }
 
 ////////// Block-level Elements
 
 p {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 ul, ol {
@@ -68,7 +73,7 @@ ul, ol {
 
 .primary {
   ul, ol {
-    margin: 0 0 0.5em 2em;
+    margin: 0 0 1.5em 2em;
     li {
       margin-bottom: 0.5em;
     }
@@ -93,7 +98,7 @@ h1 {
 h2 {
   @include heading-2;
   &.page-title {
-    margin: 1.5em 0;
+    margin: 0 0 1em;
   }
 }
 
@@ -227,5 +232,16 @@ img {
   .column-4-last {
     @include column(4);
     @include last;
+  }
+}
+
+.content-section {
+  button,
+  input,
+  select,
+  .radio-group,
+  .checkbox-group,
+   {
+    margin-bottom: 1em;
   }
 }
