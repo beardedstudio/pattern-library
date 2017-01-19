@@ -10,4 +10,4 @@ gem 'middleman-sprockets', '~> 4.1.0'
 
 # Live-reloading plugin
 gem 'middleman-livereload', '~> 3.4', '>= 3.4.6'
-
+gem 'puma', '~> 3.6.2'

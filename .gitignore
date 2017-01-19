@@ -18,4 +18,5 @@
 .DS_Store
 
 /node_modules
+/bower_components
 /source/assets/grunticon/production/preview.html

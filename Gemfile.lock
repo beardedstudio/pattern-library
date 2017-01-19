@@ -95,6 +95,7 @@ GEM
       activesupport (>= 3.1)
     parallel (1.10.0)
     public_suffix (2.0.5)
+    puma (3.6.2)
     rack (2.0.1)
     rack-livereload (0.3.16)
       rack
@@ -126,6 +127,7 @@ DEPENDENCIES
   middleman-livereload (~> 3.4, >= 3.4.6)
   middleman-sprockets (~> 4.1.0)
   middleman-syntax (~> 3.0.0)
+  puma (~> 3.6.2)
 
 RUBY VERSION
    ruby 2.3.3p222
