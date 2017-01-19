@@ -6,3 +6,27 @@ title: Buttons
   %h2.page-title Buttons
 
   %section.content-section
+    %p.intro Button styles add emphasis to user actions. They're great for calling attention to primary actions on a page, but be careful – too much emphasis quickly becomes clutter.
+
+    %h3 Primary Button
+    %p This is the standard button. Because it draws attention to itself, you'll want to be careful to keep only one of these in view at any given time, so as not to overwhelm or distract the user from their primary task.
+    %p You can achieve this affect by applying the <code>.button</code> class to any button element.
+
+    %button.button Primary Button
+    :code
+      # lang: haml
+      %button{:class => "button"} Primary Button
+    %h3 Button Subtle
+    %p The subtle button gives an action spatial heft without adding much visual weight at all. It's great for actions that need to sit next more prominent buttons, but which you don't necessarily want to encourage users to do (for example a back or cancel button).
+    %p You can achieve this affect by applying the <code>.button-subtle</code> class to any button element.
+    %button.button-subtle Subtle Button
+    :code
+      # lang: haml
+      %button{:class => "button-subtle"} Subtle Button
+    %h3 Button Highlight
+    %p Used to give stronger emphasis, especially in situations where there is one primary action users should take on a page.
+    %p You can achieve this affect by applying the <code>.button-highlight</code> class to any button element.
+    %button.button-highlight Button Highlight
+    :code
+      # lang: haml
+      %button{:class => "button-highlight"} Button Highlight
