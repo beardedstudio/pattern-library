@@ -10,7 +10,7 @@ title: Typography
     %p Headings briefly describe the information below them. They are hierarchical and can be nested, implying both relative importance and dependency. This means that an <code>h1</code> will always be more important on a page than an  <code>h2</code> in its section. It also means that if an <code>h2</code> is beneath an <code>h1</code> in the DOM, then it is implied that its content has to do with the <code>h1</code>'s content.
     %p Any heading style can be applied to any other heading (or any other element) using the appropriate heading Sass mixin.
     %h1 This is an example of an h1
-    %p The <code>h1</code> element is only used on the site for the site name.
+    %p Primarily used for page titles.
 
     :code
       # lang: sass
@@ -41,5 +41,30 @@ title: Typography
     %h6
       This is an example of an h6
     :code
-      # lang: sass
-        @include heading-6;
+      # lang: scss
+      @include heading-6;
+  %section.content-section
+    %h3.section-title Body Copy
+    %p This is an example of a paragraph tag and basic body copy. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+
+    %p This is body copy with <em>emphasis</em>.
+
+    %p This is body copy with <strong>strong emphasis</strong>.
+
+    %p This is body copy with a <a href="#">basic link</a>.
+
+  %section.content-section.primary
+    %h3.section-title Lists
+    %h4 Ordered List
+    %ol
+      %li First item in an ordered list
+      %li Second item in an ordered list
+      %li Third item in an ordered list
+      %li Fourth item in an ordered list
+
+    %h4 Unordered List
+    %ul
+      %li First item in an unordered list
+      %li Second item in an unordered list
+      %li Third item in an unordered list
+      %li Fourth item in an unordered list
