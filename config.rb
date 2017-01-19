@@ -49,6 +49,8 @@ end
 
 require 'breakpoint'
 
+set :site_title, "Bearded Pattern Library"
+
 set :css_dir, 'assets/stylesheets'
 
 set :js_dir, 'assets/javascripts'
