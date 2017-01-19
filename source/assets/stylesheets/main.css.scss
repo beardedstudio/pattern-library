@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900');
 
+// Breakpoint library
 @import "breakpoint";
 
 @import "library/reset";
@@ -13,7 +14,7 @@
 @import "globals/forms";
 @import "globals/general";
 
-@import "site-header";
-@import "site-footer";
-
 @import "modules/navigation";
+
+@import "contexts/site-header";
+@import "contexts/site-footer";
