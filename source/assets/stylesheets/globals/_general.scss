@@ -195,6 +195,15 @@ p code {
   white-space: nowrap;
 }
 
+.content-section {
+  border-bottom: 4px solid $border-color-subtle;
+  margin-bottom: 2em;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
 .grid-examples {
   .column {
     background: $border-color;
@@ -254,6 +263,12 @@ p code {
     @include column(4);
     @include last;
   }
+}
+
+.intro {
+  font-size: 1.25em;
+  font-weight: 300;
+  color: $text-color-subtle;
 }
 
 .content-section {
