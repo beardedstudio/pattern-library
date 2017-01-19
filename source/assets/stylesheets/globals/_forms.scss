@@ -25,7 +25,6 @@ textarea {
   margin-left: 0;
   margin-right: 0;
   width: 100%;
-  max-width: 500px;
   border: 1px $border-color solid;
 }
 
@@ -59,6 +58,16 @@ fieldset {
 
 form .input {
   margin-bottom: 1em;
+}
+
+ .label-text {
+  display: block;
+  margin-bottom: .5em;
+  font-size: .875em;
+}
+
+input + .label-text {
+  display: inline-block;
 }
 
 .legend-text {

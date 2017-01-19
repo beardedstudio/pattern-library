@@ -51,15 +51,21 @@
 @mixin button {
   border-radius: 4px 4px;
   display: inline-block;
-  padding: 0.5em 1em;
+  padding: 0.75em 1em;
   text-decoration: none;
   color: $background-color;
-  background-color: $link-color;
+  background-color: $button-color;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+
   &:hover,
   &:focus {
     outline: 0;
     text-decoration: none;
-    background-color: $link-color-hover;
+    background-color: $button-color-hover;
     color: $background-color;
   }
 }
@@ -67,6 +73,7 @@
 @mixin button-highlight {
   @include button;
   background-color: $highlight-color;
+
   &:hover,
   &:focus {
     background-color: $highlight-color-hover;
@@ -75,13 +82,15 @@
 
 @mixin button-subtle {
   @include button;
-  background-color: $background-color;
-  color: $link-color;
-  border: 1px solid $border-color;
+  background-color: transparent;
+  color: $button-color;
+  border: 2px solid $border-color;
+
   &:hover,
   &:focus {
-    color: $link-color;
-    background-color: $background-color-subtle;
+    color: $button-color-hover;
+    border-color: $border-color-hover;
+    background-color: transparent;
   }
 }
 
