@@ -88,7 +88,7 @@
     text-align: left;
     border-top: 1px solid #f5f5f5;
 
-    &.active a {
+    &.active > a {
       color: $link-color;
       font-weight: 700;
       position: relative;
@@ -127,6 +127,18 @@
           color: $text-color-subtle;
         }
       }
+    }
+  }
+}
+
+.navigation-item-group ul {
+  li {
+    margin-left: 1em;
+    font-size: .875em;
+
+    a {
+      padding: .5em 0;
+      color: $text-color-subtle;
     }
   }
 }
