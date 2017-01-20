@@ -77,7 +77,20 @@ ul, ol {
 
 // In Main Content Area
 
-.primary {
+.content-section {
+  border-bottom: 4px solid $border-color-subtle;
+  margin-bottom: 2em;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  .intro {
+    font-size: 1.25em;
+    font-weight: 300;
+    color: $text-color-subtle;
+  }
+
   ul, ol {
     margin: 0 0 1.5em 2em;
     li {
@@ -93,19 +106,29 @@ ul, ol {
   ol {
     list-style: decimal;
   }
+
+  // Get vertical spacing consistent in examples
+  button,
+  input,
+  select,
+  .radio-group,
+  .checkbox-group,
+   {
+    margin-bottom: 1em;
+  }
 }
 
 ///// Headings
 
 h1 {
   @include heading-1;
+  &.page-title {
+    margin: 0 0 1em;
+  }
 }
 
 h2 {
   @include heading-2;
-  &.page-title {
-    margin: 0 0 1em;
-  }
 }
 
 h3 {
@@ -143,6 +166,8 @@ img {
   display: block;
 }
 
+///// Buttons
+
 .button {
   @include button;
 }
@@ -178,112 +203,4 @@ img {
 
 .not-visually-hidden {
   @include not-visually-hidden;
-}
-
-.highlight {
-  font-family: 'Menlo', 'Courier', monospace;
-  padding: .5em;
-  margin-bottom: 2em;
-  border-radius: 4px;
-  font-size: .875em;
-  clear: both;
-  overflow-x: scroll;
-}
-
-p code {
-  font-family: 'Menlo', 'Courier', monospace;
-  background: $background-color-subtle;
-  padding: .15em .3em;
-  border-radius: 4px;
-  font-size: .875em;
-  background: #272822;
-  color: #f8f8f2;
-  white-space: nowrap;
-}
-
-.content-section {
-  border-bottom: 4px solid $border-color-subtle;
-  margin-bottom: 2em;
-
-  &:last-child {
-    border-bottom: 0;
-  }
-}
-
-.grid-examples {
-  .column {
-    background: $border-color;
-    text-align: center;
-    padding: 1em 0;
-    margin-bottom: 1em;
-  }
-
-  .column-12 {
-    @include column(12);
-    @include last;
-  }
-
-  .column-6 {
-    @include column(6);
-    @include last-col2;
-  }
-
-  .column-4 {
-    @include column(4);
-    @include last-col3;
-  }
-
-  .column-3 {
-    @include column(3);
-    @include last-col4;
-  }
-
-  .column-2 {
-    @include column(2);
-    @include last-col6;
-  }
-
-  .column-9 {
-    @include column(9);
-  }
-
-  .column-5 {
-    @include column(5);
-  }
-
-  .column-8 {
-    @include column(8);
-  }
-
-  .column-7-last {
-    @include column(7);
-    @include last;
-  }
-
-  .column-3-last {
-    @include column(3);
-    @include last;
-  }
-
-  .column-4-last {
-    @include column(4);
-    @include last;
-  }
-}
-
-.intro {
-  font-size: 1.25em;
-  font-weight: 300;
-  color: $text-color-subtle;
-}
-
-.content-section {
-  button,
-  input,
-  select,
-  .radio-group,
-  .checkbox-group,
-   {
-    margin-bottom: 1em;
-  }
 }

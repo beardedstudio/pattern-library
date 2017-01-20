@@ -1,0 +1,20 @@
+.highlight {
+  font-family: 'Menlo', 'Courier', monospace;
+  padding: .5em;
+  margin-bottom: 2em;
+  border-radius: 4px;
+  font-size: .875em;
+  clear: both;
+  overflow-x: scroll;
+}
+
+p code {
+  font-family: 'Menlo', 'Courier', monospace;
+  background: $background-color-subtle;
+  padding: .15em .3em;
+  border-radius: 4px;
+  font-size: .875em;
+  background: #272822;
+  color: #f8f8f2;
+  white-space: nowrap;
+}
