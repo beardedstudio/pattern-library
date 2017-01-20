@@ -1,7 +1,11 @@
 .site-footer {
   clear: both;
-  
+  text-align: center;
+  color: $text-color-subtle;
+  margin-top: 3em;
+  border-top: 4px solid $border-color;
+
   .copyright {
-    padding: 1em;
+    padding: 2em 0 0;
   }
 }
