@@ -7,8 +7,6 @@
   padding: 2em 0 2em 0;
 
   @include breakpoint($breakpoint-l) {
-    @include column(3);
-    @include prepend(1);
     padding-top: 4em;
   }
 
@@ -37,25 +35,5 @@
     left: 0;
     right: 0;
     text-align: center;
-  }
-
-  .content {
-    margin-top: 1em;
-    @include breakpoint($breakpoint-xs) {
-      @include column(9);
-      @include last;
-      margin-top: 1em;
-    }
-
-    @include breakpoint($breakpoint-l) {
-      @include column(9);
-      @include last;
-      margin-bottom: 4em;
-      margin-top:0.75em;
-    }
-    @include breakpoint($breakpoint-xl) {
-      @include column(10);
-      @include last;
-    }
   }
 }

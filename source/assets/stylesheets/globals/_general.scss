@@ -42,6 +42,12 @@ html {
   }
 }
 
+.site-header {
+  @include breakpoint($breakpoint-l) {
+    @include column(3);
+    @include prepend(1);
+  }
+}
 
 // General Typographic Styles
 //////////////////////////////////////
