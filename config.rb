@@ -49,7 +49,7 @@ end
 
 require 'breakpoint'
 
-set :site_title, "Bearded Pattern Library"
+set :index_file, 'colors.html'
 
 set :css_dir, 'assets/stylesheets'
 
