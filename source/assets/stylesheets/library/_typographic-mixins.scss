@@ -90,18 +90,13 @@
 @mixin heading-1 {
   @include heading;
   font-size: 2.5em;
-}
-
-@mixin heading-2 {
-  @include heading;
-  font-size: 2.5em;
 
   @include breakpoint($breakpoint-l) {
     font-size: 4em;
   }
 }
 
-@mixin heading-3 {
+@mixin heading-2 {
   @include heading;
   font-size: 1.4em;
   font-weight: 500;
@@ -111,18 +106,26 @@
   }
 }
 
-@mixin heading-4 {
+@mixin heading-3 {
   @include heading;
   font-size: 1.2em;
   font-weight: 500;
 }
 
+@mixin heading-4 {
+  @include heading;
+  font-size: 1em;
+  font-weight: 700;
+}
+
 @mixin heading-5 {
   @include heading;
   font-size: 1em;
+  font-weight: 700;
 }
 
 @mixin heading-6 {
   @include heading;
   font-size: 0.875em;
+  font-weight: 700;
 }

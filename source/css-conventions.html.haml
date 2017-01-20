@@ -3,10 +3,10 @@ title: CSS Conventions
 ---
 
 .content
-  %h2.page-title CSS Conventions
+  %h1.page-title CSS Conventions
 
   %section.content-section
-    %h3 Stylesheet Directory Structure
+    %h2 Stylesheet Directory Structure
     %p Stylesheets for Bearded sites are broken into partials, and imported individually using the <code>@import 'path/to/file'</code> syntax. This allows the developer to control the stylesheets&rsquo; load order. Stylesheets (except libraries) are located in <code>assets/stylesheets</code> and are loaded in the following order:
 
     .primary
@@ -19,19 +19,19 @@ title: CSS Conventions
 
     %p When considering where styles belong, we can think of them as layers of increasing specificity.
 
-    %h4 Third-Party Libraries
+    %h3 Third-Party Libraries
     %p These are libraries we didn't create, like Breakpoint. We load these first, and they function as a very basic foundation on which all of our work sits.
 
-    %h4 Library
+    %h3 Library
     %p The library is where we keep all of our variables and mixins. These are things that by themselves don&rsquo;t have an effect on the appearance of anything. They&rsquo;re the building blocks of our CSS that will be called into action elsewhere in our stylesheets.
 
-    %h4 Globals
+    %h3 Globals
     %p These is where our first direct visual styling occurs. These are broad styles that are largely context- and content-agnostic. Here we might style basic form elements, icons, or typographic elements.
 
-    %h4 Modules
+    %h3 Modules
     %p Modular styles focus on content rather than context. A module, in other words is a &ldquo;what,&rdquo; not a &ldquo;where.&rdquo; For instance, we might have a pager module that sits at the bottom of lists of items that exceed the desired page length. This pager may look slightly different on various list pages, but there is some common styling that applies to all situations. This is where those core styles that define what it is to be a pager are kept.
 
-    %h4 Contextual
+    %h3 Contextual
     %p As the name implies, these styles have everything to do with context. For instance, if that same pager module looks a little different on the messages list view than it looks everywhere else, then those styles can be placed in the messages partial.
     %p Example of partials and load order:
 
@@ -56,7 +56,7 @@ title: CSS Conventions
       @import "contexts/site-header";
       @import "contexts/site-footer";
   %section.content-section
-    %h3 Comments
+    %h2 Comments
     %p Comments in Sass could appear in two ways. If you want to have an in-context description of the code to help others understand your choices, just use the minimum 2 slashes:
     :code
       # lang: scss
@@ -72,7 +72,7 @@ title: CSS Conventions
         [...]
       }
   %section.content-section
-    %h3 Style Rules
+    %h2 Style Rules
     .primary
       %ul
         %li We use hyphens, not underscores, unless underscores are required.

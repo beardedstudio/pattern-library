@@ -3,7 +3,7 @@ title: Naming Conventions
 ---
 
 .content
-  %h2.page-title Naming Conventions
+  %h1.page-title Naming Conventions
 
   %section.content-section
     %p.intro Let's be honest: naming things well is hard. There a lot of different ways to go about naming things on the web. There's #{ link_to "BEM", "http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" }. There's #{ link_to "SMACSS", "https://smacss.com/" } . Both of these methods have a lot to recommend them.
@@ -12,14 +12,14 @@ title: Naming Conventions
     %p Let's look at some of the basic requirements we have for class naming conventions.
 
   %section.primary.content-section
-    %h3 Parent Specificity
+    %h2 Parent Specificity
     %p Specificity is a double-edged sword, and we want both the ability to style both broadly and specifically. To allow both, we need a combination of both approaches. At the lowest (child) levels we'll want to be as general as possible, while at the parent levels allowing for more specificity. Here's an example:
 
     :code
       # lang: haml
       %article.event-item
         %img{class: "lead-image", src: "/assets/images/PinkMartini-1300x500.jpg"}
-        %h3.title Pink Martini
+        %h2.title Pink Martini
         .time-wrapper
           %time.range Wed, Jul 22
           %span.range-separator –
@@ -39,14 +39,14 @@ title: Naming Conventions
       }
     %p This flexibility works very well with the modular approach we've taken throughout the code. We can initially style very broadly, then move on to styling more specifically to augment those base level styles based on the context of those items.
   %section.content-section
-    %h3 Predictability
+    %h2 Predictability
     %p Whenever we can make the class names obvious and predictable for other developers and QA, that's a great thing. A pattern we love to use to assist with this that comes up frequently is the group / item paradigm. Let's look at a situation where we have a bunch of entities called <code>.donation-item</code>. How can we give a name to the containing element of those items that's predictable? That's where our group / item system comes into play:
     :code
       # lang: haml
         %section.donation-item-group
           %article.donation-item
             %header
-              %h3.date
+              %h2.date
                 %time.value Tue, Dec 10, 2013
               .total $52.00
             .recipient-information
@@ -54,13 +54,13 @@ title: Naming Conventions
               .fund-name Annual Fund 2013
           %article.donation-item
             %header
-              %h3.date
+              %h2.date
                 %time.value Wed, Dec 11, 2013
               .total $52.00
             .recipient-information
               .organization Pittsburgh Cultural Trust
               .fund-name Annual Fund 2013
   %section.content-section
-    %h3 Specificity
+    %h2 Specificity
     %p Something we're fond of saying about specificity in CSS is that we should be exactly as specific as we need to be, and no more. Why make it any harder to override previous styles than you need to? This certainly applies to the idea of over-nesting in Sass. If you don't need to nest your styling four levels deep, don't so it! You'll probably just have to go five levels deep somewhere down the road, just to make some styling change.
     %p But perhaps more importantly (and certainly more simply): don't use IDs when you can use classes. Just don't do it! Because IDs are always more specific than classes, they can't be overriden without another ID. IDs escalate the specificity war without adding any benefit to you. So if you need an ID as as a target for an anchor or some Javascript, go for it. But don't use them for styling. Use a class instead!

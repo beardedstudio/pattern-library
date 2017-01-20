@@ -3,103 +3,103 @@ title: HTML Guide
 ---
 
 .content
-  %h2.page-title HTML Guide
+  %h1.page-title HTML Guide
 
   %section.content-section
     %p.intro This is a guide to how we used common HTML on this project. As always, use your best judgment!
 
-    %h3 Grouping
-    %h4 article
+    %h2 Grouping
+    %h3 article
     %p The parts contained within an article make up a single content type, such as a magazine article, blog post, event, or recipe. Example:
     :code
       # lang: haml
       %article
         %h1 Title
         %p This is the of the article.
-    %h4 nav
+    %h3 nav
     %p Used to contain navigational elements such as site navigation or pagination.
 
-    %h4 aside
+    %h3 aside
     %p Contains content that is ancillary or tangential to the main content it is grouped with. Frequently asides are used for what – in the layout – becomes a sidebar.
 
-    %h4 section
+    %h3 section
     %p A group of items that are related in some way, typically with a heading.
 
   %section.content-section
-    %h3 Block Level Elements
-    %h4 h1-h6
+    %h2 Block Level Elements
+    %h3 h1-h6
     %p Headings briefly describe the information below them. They are hierarchical and can be nested, implying both relative importance and dependency.
 
-    %h4 p
+    %h3 p
     %p A paragraph is for what you would think: a grouping of one or more sentences.
 
-    %h4 blockquote
+    %h3 blockquote
     %p Contains a quote from an external source or a pullquote from related content.
 
-    %h4 ol, ul, li
+    %h3 ol, ul, li
     %p These are for lists of things. In a UL (unordered list), the order of the items is arbitrary. In an OL (an ordered list), the order of items is intentional and important. Lists imply that all the items in that list are related, and are nestable (such that a new list can be within a single list item of a higher-level list). Because of this, lists are often used for navigational items.
 
-    %h4 dl, dt, dd
+    %h3 dl, dt, dd
     %p Definition lists (dl) are special lists that provide sets of items as terms (dt) and their definitions (dd). Because the term and definition HTML are not grouped together, however, this often presents styling challenges and is avoided.
 
-    %h4 figure, figcaption
+    %h3 figure, figcaption
     %p A figure is defined as "an image, an illustration, a diagram, a code snippet, or a schema that is referenced in the main text, but that can be moved to another page or to an appendix without affecting the main flow." In other words, a figure is not required to understand a text, but rather supports the text by further illustrating a point. A figcaption is a text caption that relates to the content of a figure (which is frequently an img).
 
-    %h4 div
+    %h3 div
     %p A div is a division between things, but implies no other semantic meaning. Unlike a section, a div's contents may or may not be related. Because of this a div should only be used when no other more semantically appropriate element is applicable.
 
   %section.content-section
-    %h3 Inline Elements
-    %h4 img
+    %h2 Inline Elements
+    %h3 img
     %p Places an image in the page
 
-    %h4 a
+    %h3 a
     %p Is an anchor or link.
 
-    %h4 em
+    %h3 em
     %p Italicizes (or emphasizes) text
 
-    %h4 strong
+    %h3 strong
     %p Makes text bold (think: a stronger weight)
 
-    %h4 cite
+    %h3 cite
     %p Cite defines the title of a work (e.g. a book, a song, a movie, a TV show, a painting, a sculpture, etc.). Note that a person's name is not the title of a work, and should not be used with cite, say in a blockquote. In that case, a footer is more appropriate.
 
-    %h4 span
+    %h3 span
     %p Span is fundamentally an inline companion to the div tag. Like div, span implies no semantic meaning and should not be used unless there is not a more semantic element available.
 
   %section.content-section
-    %h3 Tables
+    %h2 Tables
 
-    %h4 table, thead, tbody, tfoot, tr, th, td
+    %h3 table, thead, tbody, tfoot, tr, th, td
     %p Tables are for formatting tabular data.
     %p When deciding if something should be formatted as a table, you can ask yourself: "does this content primarily acquire its meaning by comparing its components across rows and columns?" If not, it is not necessarily tabular data, and might be better formatted in some other way, such as with headings and lists, or sections and articles.
 
   %section.content-section
-    %h3 Forms
+    %h2 Forms
 
-    %h4 form
+    %h3 form
     %p A wrapper for the form elements which defines the form action.
 
-    %h4 fieldset, legend
+    %h3 fieldset, legend
     %p Contains a set of related inputs separate from the rest of the form. A legend acts as a non-hierarchical heading for a fieldset.
     %p Since a fieldset is a way to group related inputs together, it's rarely useful to have a single fieldset inside a form, as the form does this job already. Multiple fieldsets in the same form, however, provide some insight into how the inputs inside the form relate to each other.
 
-    %h4 input(s), label
+    %h3 input(s), label
     %p Inputs are how users send you data. A label acts a descriptive non-hierarchical heading for an input.
 
   %section.content-section
-    %h3 Presentational HTML
+    %h2 Presentational HTML
     %p These HTML elements are considered presentational (used to achieve a visual effect), and should be avoided.
 
-    %h4 br
+    %h3 br
     %p If you need a line break, perhaps there is a break in the content, too? In other words a new paragraph, a new list, etc.? If you want a visual break in the content that's not related to stucture, define it in the stylesheet with margin or padding.
 
-    %h4 Non-breaking space
+    %h3 Non-breaking space
     %p In general extra horizontal spacing can also be done with CSS.
 
-    %h4 i
+    %h3 i
     %p Italics are a visual typographic effect which you may want to change later. Consider the em tag instead.
 
-    %h4 b
+    %h3 b
     %p Bold is a visual typographic effect which you may want to change later. Consider the strong tag instead.
