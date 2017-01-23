@@ -45,11 +45,19 @@ helpers do
   def nav_active(path)
     current_page.path == path ? {:class => "active"} : {}
   end
+
+  def show_nav
+    pages = Array.new
+    sitemap.resources.find_all { |r| r.data.title }.each do |page|
+      pages.push page
+    end
+    return pages
+  end
 end
 
 require 'breakpoint'
 
-set :index_file, 'colors.html'
+set :index_file, 'buttons.html'
 
 set :css_dir, 'assets/stylesheets'
 

@@ -5,44 +5,6 @@
 
   %nav.primary-navigation#primary-navigation
     %ul.navigation-item-group
-      %li{ nav_active('colors.html') }
-        %a{:href => "/"}
-          Colors
-      %li{ nav_active('typography.html') }
-        %a{:href => "/typography"}
-          Typography
-      %li{ nav_active('grid.html') }
-        %a{:href => "/grid"}
-          Grid
-      %li{ nav_active('icons.html') }
-        %a{:href => "/icons"}
-          Icons
-      %li{ nav_active('buttons.html') }
-        %a{:href => "/buttons"}
-          Buttons
-      %li{ nav_active('forms.html') }
-        %a{:href => "/forms"}
-          Forms
-      %li{ nav_active('modules.html') }
-        %a{:href => "/modules"}
-          Modules
-        /
-          %ul
-            %li{ nav_active('other.html') }
-              %a{:href => "/modules/other"}
-                Other
-            %li{ nav_active('blabla.html') }
-              %a{:href => "/modules/modules"}
-                Modules
-            %li{ nav_active('here.html') }
-              %a{:href => "/modules/here"}
-                Here
-      %li{ nav_active('css-conventions.html') }
-        %a{:href => "/css-conventions"}
-          CSS Conventions
-      %%li{ nav_active('naming-conventions.html') }
-        %a{:href => "/naming-conventions"}
-          Naming Conventions
-      %li{ nav_active('html-guide.html') }
-        %a{:href => "/html-guide"}
-          HTML Guide
+    - show_nav.each do |page|
+      %li{ nav_active(page.path) }
+        = link_to page.data.title, page.path
