@@ -7,8 +7,6 @@
   position: relative;
   text-align: right;
 
-  //Specifically using breakpoint nav here because it is contextually appropriate.
-  //In almost all other cases, you should use breakpoint large.
   @include breakpoint($breakpoint-nav) {
     display: none;
   }
@@ -48,36 +46,28 @@
     display: block;
   }
 
-  @include breakpoint($breakpoint-nav) {
-    padding-top: 3.5em;
+  a {
+    color: $text-color-lighter;
     display: block;
-  }
+    position: relative;
+    transition: all .2s;
+    text-decoration: none;
+    padding: .25em 0;
 
-  li {
-    list-style: none;
-
-    a {
-      color: $text-color-lighter;
-      display: block;
-      padding: .3em 0;
-      position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      background: transparent;
+      left: -1em;
+      top: 0;
       transition: all .2s;
+    }
 
-      &::before {
-        content: "";
-        position: absolute;
-        width: 4px;
-        height: 30px;
-        background: transparent;
-        left: -1em;
-        top: 50%;
-        margin-top: -15px;
-        transition: all .2s;
-      }
-
+    @include breakpoint($breakpoint-nav) {
       &:hover {
         color: $text-color;
-        text-decoration: none;
 
         &::before {
           background: $border-color;
@@ -86,7 +76,13 @@
     }
   }
 
+  @include breakpoint($breakpoint-nav) {
+    padding-top: 3.5em;
+    display: block;
+  }
+
   li {
+    list-style: none;
     text-align: left;
 
     &.active > a {
@@ -99,7 +95,6 @@
           background: $link-color;
         }
       }
-
     }
 
     @include breakpoint($breakpoint-nav) {
@@ -110,23 +105,6 @@
     &:first-of-type {
       padding-top: 0;
       margin-top: 0;
-      border-top: 0 none;
-    }
-  }
-}
-
-.primary-navigation {
-  @include breakpoint($breakpoint-nav) {
-    ul {
-      li {
-        &.last {
-          margin-right: 0;
-        }
-
-        a {
-          color: $text-color-lighter;
-        }
-      }
     }
   }
 }
@@ -139,34 +117,5 @@
     margin: 2.5em 0 .5em;
     display: inline-block;
     font-weight: 500;
-  }
-
-  ul li {
-    a {
-      padding: .3em 0;
-      color: $text-color-lighter;
-    }
-  }
-}
-
-///// Secondary Navigation on internal pages
-
-.secondary-navigation {
-  @include title-face;
-  border: 1px solid $border-color;
-  padding: 1em 0.5em 0.5em 0.5em;
-  margin-bottom: 1.5em;
-
-  ul {
-    margin: 0;
-
-    li {
-      @include divider-top;
-      list-style-type: none;
-    }
-
-    ul li {
-      padding-left: 1em;
-    }
   }
 }

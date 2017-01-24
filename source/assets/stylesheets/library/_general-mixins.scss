@@ -12,42 +12,6 @@
   }
 }
 
-//// use this on your grid wrapper to make everything equal height (a solution that utilizes display: flex)
-@mixin equal-height {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-@mixin divider-bottom {
-  padding-bottom: 1em;
-  border-bottom: 1px solid $border-color;
-  margin-bottom: 1em;
-}
-
-@mixin divider-top {
-  padding-top: 1em;
-  border-top: 1px solid $border-color;
-  margin-top: 1em;
-}
-
-@mixin divider-right {
-  padding-right: 1em;
-  border-right: 1px solid $border-color;
-  margin-right: 1em;
-}
-
-@mixin divider-left {
-  padding-left: 1em;
-  border-left: 1px solid $border-color;
-  margin-left: 1em;
-}
-
-@mixin divider-none {
-  padding: 0;
-  border: 0 none;
-  margin: 0;
-}
-
 @mixin button {
   border-radius: 4px 4px;
   display: inline-block;
@@ -135,27 +99,6 @@
   padding: inherit;
   position: inherit;
   width: inherit;
-}
-
-@mixin reset-list {
-  margin-left: 0;
-  margin-top: 0;
-  li {
-    list-style-type: none;
-  }
-}
-
-@mixin inline-list {
-  margin-bottom: 1.5em;
-
-  li {
-    display: inline;
-    margin-right: 0.25em;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
 }
 
 // remove the "spinner" from number fields
