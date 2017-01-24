@@ -1,0 +1,14 @@
+---
+general:
+  colors.html.haml: "/general/colors.html.haml"
+  typography.html.haml: "/general/typography.html.haml"
+  buttons.html.haml: "/general/buttons.html.haml"
+  grid.html.haml: "/general/grid.html.haml"
+  icons.html.haml: "/general/icons.html.haml"
+  forms.html.haml: "/general/forms.html.haml"
+modules:
+  test-module.html.haml: "/modules/test-module.html.haml"
+documentation:
+  css-conventions.html.haml: "/documentation/css-conventions.html.haml"
+  naming-conventions.html.haml: "/documentation/naming-conventions.html.haml"
+  html-guide.html.haml: "/documentation/html-guide.html.haml"

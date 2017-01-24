@@ -53,11 +53,17 @@ helpers do
     end
     return pages
   end
+
+  def sub_pages(page)
+    sitemap.resources.find_all { |r| r.data.parent }.each do |resource|
+      resource.path
+    end
+  end
 end
 
 require 'breakpoint'
 
-set :index_file, 'buttons.html'
+set :index_file, 'index.html'
 
 set :css_dir, 'assets/stylesheets'
 
@@ -68,6 +74,12 @@ set :images_dir, 'assets/images'
 activate :directory_indexes
 activate :syntax
 activate :sprockets
+activate :navtree do |options|
+  options.ignore_dir += ['partials']
+  options.automatic_tree_updates = false;
+end
+
+redirect "index.html", to: "/general/colors.html"
 
 sprockets.append_path File.join root, "bower_components"
 

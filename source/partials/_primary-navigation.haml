@@ -5,6 +5,4 @@
 
   %nav.primary-navigation#primary-navigation
     %ul.navigation-item-group
-    - show_nav.each do |page|
-      %li{ nav_active(page.path) }
-        = link_to page.data.title, page.path
+    = tree_to_html(data.tree)
