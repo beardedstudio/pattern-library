@@ -66,7 +66,7 @@ body {
 ////////// Block-level Elements
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: .875em;
 }
 
 ul, ol {
@@ -92,7 +92,8 @@ ul, ol {
   }
 
   ul, ol {
-    margin: 0 0 1.5em 2em;
+    margin: 0 0 1em 2em;
+    
     li {
       margin-bottom: 0.5em;
     }
@@ -114,7 +115,7 @@ ul, ol {
   .radio-group,
   .checkbox-group,
    {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
   }
 }
 
@@ -145,6 +146,10 @@ h5 {
 
 h6 {
   @include heading-6;
+}
+
+h2 + h3 {
+  margin-top: .5em;
 }
 
 ////////// Inline Elements

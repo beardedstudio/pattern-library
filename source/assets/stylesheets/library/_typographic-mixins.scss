@@ -79,7 +79,8 @@
 
 @mixin heading {
   @include title-face;
-  margin-bottom: 0.35em;
+  margin-bottom: 0.15em;
+  margin-top: 1.875em;
   line-height: 1.2;
   color: $heading-color;
   a {
