@@ -20,12 +20,13 @@ input[type="url"],
 textarea {
   font-size: 1em;
   padding: 0.45em 0.5em;
-  border-radius: 2px 2px;
+  border-radius: 4px;
   color: $text-color;
   margin-left: 0;
   margin-right: 0;
   width: 100%;
   border: 1px $border-color solid;
+  -webkit-appearance: none;
 }
 
 // remove the "spinner" from number fields
@@ -34,10 +35,12 @@ input[type="number"] {
 }
 
 select {
-  height: 3em;
+  height: 2.25em;
   line-height: 2.5em;
   border: 1px solid $border-color;
   width: 100%;
+  font-size: 16px;
+  color: $text-color;
 }
 
 form label {
