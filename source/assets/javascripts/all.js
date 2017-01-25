@@ -1,4 +1,3 @@
-//= require vendor/modernizr.js
 //= require jrespond/jRespond.js
 //= require shade.js
 //= require responders.js
