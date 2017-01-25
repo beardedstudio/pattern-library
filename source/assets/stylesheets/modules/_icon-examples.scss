@@ -1,0 +1,24 @@
+.icons-group {
+
+  .icon {
+    @include column(3);
+    @include last-col4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1em;
+    padding: 1em 0 .5em;
+  }
+
+  [class*="icon-"] {
+    display: block;
+    margin-bottom: .7em;
+  }
+
+  .name {
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    font-size: .875em;
+  }
+}

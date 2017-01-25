@@ -1,6 +1,18 @@
+.icon-cog.min { background-image: url('png/cog.min.png'); background-repeat: no-repeat; }
+
+.icon-cog { background-image: url('png/cog.png'); background-repeat: no-repeat; }
+
+.icon-heart.min { background-image: url('png/heart.min.png'); background-repeat: no-repeat; }
+
+.icon-heart { background-image: url('png/heart.png'); background-repeat: no-repeat; }
+
 .icon-menu.min { background-image: url('png/menu.min.png'); background-repeat: no-repeat; }
 
 .icon-menu { background-image: url('png/menu.png'); background-repeat: no-repeat; }
+
+.icon-printer.min { background-image: url('png/printer.min.png'); background-repeat: no-repeat; }
+
+.icon-printer { background-image: url('png/printer.png'); background-repeat: no-repeat; }
 
 .icon-search.min { background-image: url('png/search.min.png'); background-repeat: no-repeat; }
 

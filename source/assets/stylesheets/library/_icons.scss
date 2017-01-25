@@ -10,7 +10,7 @@
   @include icon-base;
 }
 
-.icon-menu {
+[class*="icon-"] {
   @extend %icon-base;
   height: 24px;
   width: 24px;
