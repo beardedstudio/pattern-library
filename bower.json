@@ -1,7 +1,7 @@
 {
-  "name": "stubbleman",
-  "version": "0.3.0",
+  "name": "bearded-pattern-library",
+  "version": "1.0.0",
   "dependencies": {
     "jrespond": "*"
-  },
+  }
 }
