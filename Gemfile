@@ -12,3 +12,4 @@ gem 'middleman-navtree'
 # Live-reloading plugin
 gem 'middleman-livereload', '~> 3.4', '>= 3.4.6'
 gem 'puma', '~> 3.6.2'
+gem 'rake', '~> 12.0'
