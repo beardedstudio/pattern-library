@@ -1,11 +1,8 @@
 {
   "name": "",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "",
   "author": "Bearded <info@bearded.com>",
-  "scripts": {
-    "modernizr": "rimraf source/javascripts/vendor/modernizr.js && babel-node tasks/build-modernizr.js"
-  },
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
@@ -17,8 +14,5 @@
     "grunt-grunticon": "^2.3.1",
     "grunt-svgmin": "^4.0.0",
     "grunticon-lib": "^1.0.4",
-    "modernizr": "^3.3.1",
-    "nodemon": "^1.8.1",
-    "rimraf": "^2.5.2"
   }
 }
