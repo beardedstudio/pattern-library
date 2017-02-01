@@ -81,8 +81,6 @@ end
 
 redirect "index.html", to: "/general/colors.html"
 
-sprockets.append_path File.join root, "bower_components"
-
 # Build-specific configuration
 configure :build do
   activate :minify_css

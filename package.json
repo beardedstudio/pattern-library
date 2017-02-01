@@ -9,7 +9,6 @@
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
-    "bower": "^1.5.2",
     "fs-extra": "^0.26.5",
     "globby": "^4.0.0",
     "grunt": "^1.0.1",
