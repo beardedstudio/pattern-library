@@ -24,6 +24,12 @@
   &:hover, &:focus {
     cursor: pointer;
   }
+
+  .trigger-text {
+    color: $text-color-lighter;
+    font-size: 0.875em;
+    padding-left: 0.5em;
+  }
 }
 
 .mobile-trigger {
